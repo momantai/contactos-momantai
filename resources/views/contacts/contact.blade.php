@@ -42,8 +42,33 @@
                         </div>
                     </div>
                 </div>
+
+            </div>
+            <div class="text-center">
+                <button id="delete-contact" class="btn btn-danger mt-4">Delete contact</button>
+
+                <form action="/contacts/{{ $contact->id }}" method="POST" id="delete-form">
+                    @csrf
+                    <input type="hidden" name="_method" value="DELETE">
+                </form>
             </div>
         </div>
     </div>
 </div>
+
+@push('scripts')
+    <script>
+        let delete_contact = document.getElementById("delete-contact");
+        delete_contact.addEventListener('click', (evt) => {
+            const confirm_delete = confirm("Do you really want to delete this contact?");
+
+            console.log(confirm_delete);
+            
+            if(confirm_delete) {
+                document.getElementById('delete-form').submit();
+            }
+        });
+    </script>
+@endpush
+
 @endsection

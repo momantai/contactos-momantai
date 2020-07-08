@@ -41,8 +41,7 @@ class Contacts extends Controller
         ]);
     }
 
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         $contact = Contact::findOrFail($id);
         $contact->fname = $request->get('fname');
         $contact->lname = $request->get('lname');
@@ -50,7 +49,8 @@ class Contacts extends Controller
         $contact->number = $request->get('phone');
 
         $contact->update();
-        return redirect('contacts/' . $id);
+        
+        return redirect('contacts/' . $id)->with('success', 'Your contact information has been updated correctly.');
 
     }
 
@@ -69,6 +69,13 @@ class Contacts extends Controller
             echo "Error.";
         }
 
-        return redirect('home');
+        return redirect('home')->with('success', 'You have added a new contact to your contact list. We will notify you that now you have it added.');
+    }
+
+    public function destroy($id) {
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+
+        return redirect('home')->with('warning', 'You have deleted a contact from your list.');
     }
 }
