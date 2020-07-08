@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <div class="item-contact">
                         <div class="icon">
-                            <img width="15px" src="https://image.flaticon.com/icons/svg/892/892781.svg" alt="">
+                            <img width="15px" src="https://image.flaticon.com/icons/svg/1077/1077114.svg" alt="">
                         </div>
                         <div class="info-contact">
                             {{ $contact->fname }} {{ $contact->lname }}
@@ -27,7 +27,7 @@
                     </div>
                     <div class="item-contact">
                         <div class="icon">
-                            <img width="15px" src="https://image.flaticon.com/icons/svg/892/892781.svg" alt="">
+                            <img width="15px" src="https://image.flaticon.com/icons/svg/725/725643.svg" alt="">
                         </div>
                         <div class="info-contact">
                             {{ $contact->email }}
@@ -35,7 +35,7 @@
                     </div>
                     <div class="item-contact">
                         <div class="icon">
-                            <img width="15px" src="https://image.flaticon.com/icons/svg/892/892781.svg" alt="">
+                            <img width="15px" src="https://image.flaticon.com/icons/svg/597/597177.svg" alt="">
                         </div>
                         <div class="info-contact">
                             {{ $contact->number }}
@@ -63,7 +63,7 @@
             const confirm_delete = confirm("Do you really want to delete this contact?");
 
             console.log(confirm_delete);
-            
+
             if(confirm_delete) {
                 document.getElementById('delete-form').submit();
             }

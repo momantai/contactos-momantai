@@ -47,7 +47,7 @@
                     <div class="table">
                         @foreach($contacts as $contact)
                         <div class="item">
-                            <a href="/contacts/{{ $contact->id }}">
+                            <a class="text-dark text-decoration-none" href="/contacts/{{ $contact->id }}">
                                 <div class="el">{{ $contact->fname }} {{ $contact->lname }}</div>
                                 <div class="el">{{ $contact->email }}</div>
                             </a>
